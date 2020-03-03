@@ -19,6 +19,7 @@ const cssHandler = () => {
 }
 
 
+
 //压缩JS
 //先安装 模块   npm install gulp-uglify --save-dev
 //由于 uglify不支持ES6     所以还要安装 gulp-babel  @babel/core  @babel/preset-env
@@ -33,6 +34,10 @@ const jsHandler = () => {
         .pipe(gulp.dest("dest/js"))
 }
 
+//转移  lib文件夹
+const libMove = () => {
+    return gulp.src("./src/lib/**").pipe(gulp.dest("dest/lib"))
+}
 
 
 //压缩html
@@ -74,7 +79,7 @@ const webserverHandler = () => {
         .pipe(webserver({
             host: '127.0.0.1', // 域名, 这个域名可以自定义
             port: 8080, // 端口号, 0 ~ 65535, 尽量不适用 0 ~ 1023
-            open: './html/test.html', // 你默认打开的首页, 从 dist 下面的目录开始书写  (不用加作为服务器的文件夹了)
+            open: '/html/index.html', // 你默认打开的首页, 从 dist 下面的目录开始书写  (不用加作为服务器的文件夹了)
             livereload: true, // 自动刷新浏览器 - 热重启
         })) // 开启服务器
 }
@@ -84,14 +89,15 @@ const watchHandler = () => {
     gulp.watch("./src/css/*.css", cssHandler)
     gulp.watch("./src/js/*.js", jsHandler)
     gulp.watch("./src/html/*.html", htmlHandler)
+    gulp.watch("./src/lib/**", libMove)
     gulp.watch("./src/images/**", imgHandler)
 
 }
 
 //同时执行多方法    gulp-series 按顺序执行，上面完了才开始下面     gulp-parallel() 同时执行不分先后
-module.exports.autoFn = gulp.series(
+module.exports.default = gulp.series(
     delHandler,  //先执行
-    gulp.parallel(cssHandler, jsHandler, htmlHandler, imgHandler),
+    gulp.parallel(cssHandler, jsHandler, libMove, htmlHandler, imgHandler),
     webserverHandler,
     watchHandler,
 )

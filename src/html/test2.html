@@ -1,0 +1,126 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/base(新增H5标签).css">
+    <link rel="stylesheet" href="../lib/swiper.min.css">
+    <script src="../lib/swiper.min.js"></script>
+    <style>
+        .swiper-wrapper {
+            transition-timing-function: linear !important;
+        }
+
+        .autoBox {
+            padding: 5px 0;
+            height: 280px;
+            border: 1px solid black;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .swiper-slide p {
+            margin-top: 16px;
+            text-align: center;
+            font-size: 14px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="autoBox">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="../images/index/img1.jpg" alt="">
+                    <p>Alter Fate Grand Order Avenger 贞德ALTER 再贩 开订</p>
+                </div>
+                <div class="swiper-slide">
+                    <div class="imgBox">
+                        <img src="../images/index/img2.jpg" alt="">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="imgBox">
+                        <img src="../images/index/img3.jpg" alt="">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="imgBox">
+                        <img src="../images/index/img1.jpg" alt="">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="imgBox">
+                        <img src="../images/index/img2.jpg" alt="">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="imgBox">
+                        <img src="../images/index/img3.jpg" alt="">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="imgBox">
+                        <img src="../images/index/img1.jpg" alt="">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="imgBox">
+                        <img src="../images/index/img2.jpg" alt="">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="imgBox">
+                        <img src="../images/index/img3.jpg" alt="">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="imgBox">
+                        <img src="../images/index/img1.jpg" alt="">
+                    </div>
+
+                </div>
+                <div class="swiper-slide">
+                    <div class="imgBox">
+                        <img src="../images/index/img2.jpg" alt="">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="imgBox">
+                        <img src="../images/index/img3.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+<script>
+    var mySwiper = new Swiper('.swiper-container', {
+        autoplay: {
+            delay: 0,    //延迟时间，走马灯为零。  
+        },
+        speed: 5000,     //滚动速度，如果轮播图的话，设置小一点，让给delay一点时间即可
+        loop: true,
+        freeMode: true,
+        slidesPerView: 11,      //slider容器能够同时显示的slides数量,如果swiper-slide小于该值，则动画不生效
+        spaceBetween: 14,
+        slidesPerGroup: 1,   //多个为一组，滚动
+    })        
+</script>
+
+</html>
