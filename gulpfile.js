@@ -38,6 +38,10 @@ const jsHandler = () => {
 const libMove = () => {
     return gulp.src("./src/lib/**").pipe(gulp.dest("dest/lib"))
 }
+//转移  json文件夹
+const jsonMove = () => {
+    return gulp.src("./src/json/**").pipe(gulp.dest("dest/json"))
+}
 
 
 //压缩html
@@ -90,6 +94,7 @@ const watchHandler = () => {
     gulp.watch("./src/js/*.js", jsHandler)
     gulp.watch("./src/html/*.html", htmlHandler)
     gulp.watch("./src/lib/**", libMove)
+    gulp.watch("./src/json/**", jsonMove)
     gulp.watch("./src/images/**", imgHandler)
 
 }
@@ -97,7 +102,7 @@ const watchHandler = () => {
 //同时执行多方法    gulp-series 按顺序执行，上面完了才开始下面     gulp-parallel() 同时执行不分先后
 module.exports.default = gulp.series(
     delHandler,  //先执行
-    gulp.parallel(cssHandler, jsHandler, libMove, htmlHandler, imgHandler),
+    gulp.parallel(cssHandler, jsHandler, libMove, jsonMove, htmlHandler, imgHandler),
     webserverHandler,
     watchHandler,
 )
