@@ -2,6 +2,7 @@
 $(function () {
 
     //渲染走马灯部分
+    //请求渲染floor3  数据重复用
     sendAjax("get", "../json/indexData.json").then((res) => {
         let swiper_slide = res.map(function (item) {
             return ` <div class="swiper-slide">
@@ -15,7 +16,6 @@ $(function () {
                 `;
         }).join("");
         $(".autoBox .autoBox-section .swiper-wrapper").html(swiper_slide)
-
         //渲染完页面，才能加走马灯效果
         let swiper1 = new Swiper('.swiper-container1', {
             autoplay: {
@@ -28,7 +28,6 @@ $(function () {
             spaceBetween: 12,
             slidesPerGroup: 1,   //多个为一组，滚动
         })
-
         //走马灯移入 移出 停止
         $(".swiper-container1").hover(function () {
 
@@ -37,6 +36,45 @@ $(function () {
             swiper1.autoplay.start()
         })
 
+
+        //请求渲染floor3  数据重复用
+        let shopBoxDom = "";
+        for (var i = 0; i < 10; i++) {
+            shopBoxDom += `<div class="shopBox">
+                                <div class="imgBox">
+                                    <img src="${res[i].rowLeftImg}" alt="">
+                                </div>
+
+                                <div class="blackBox">
+                                    <div class="contextBox">
+                                        <div class="title">${res[i].indexData.name}</div>
+                                        <div class="price">${res[i].indexData.price}</div>
+                                    </div>
+                                </div>
+                            </div>`;
+        }
+        $(".floor3 .bottom-content").html(shopBoxDom);
+
+
+
+        //请求渲染cooperation2-box   数据重复用
+
+        let cBox = "";
+        for (var i = 6; i < 12; i++) {
+            cBox += `  <div class="shopBox">
+                            <div class="imgBox">
+                                <img src="${res[i].rowLeftImg}" alt="">
+                            </div>
+                            <div class="font-box">
+                                <div class="fb-title">${res[i].indexData.name}</div>
+                                <div class="details">
+                                    <div class="price">${res[i].indexData.price}</div>
+                                    <div class="flag">现货</div>
+                                </div>
+                            </div>
+                        </div>`;
+        }
+        $(".cooperation2-box  .right-context").html(cBox);
 
     })
 
@@ -252,7 +290,69 @@ $(function () {
     })//请求
 
 
+    //处理从 登录页成功后跳转到首页的功能
+    let sessionUsername = window.sessionStorage.getItem("username");
+    let sessionPassword = window.sessionStorage.getItem("password");
+    if (sessionUsername && sessionPassword) {
+        $.ajax({
+            type: "post",
+            url: "/login",
+            dataType: "json",
+            data: {
+                username: sessionUsername,
+                password: sessionPassword,
+            },
+            success: function (res) {
+                if (res.status == 1) {
+                    $(".notLoginBox").css({ display: "none" });
+                    $(".logining").css({ display: "block" });
+                    $(".login-username").text(sessionUsername);
 
+                    $(".i-username").text(`用户名:${res.datas.name}`)
+                    $(".i-email").text(`邮箱:${res.datas.email}`)
+
+                }
+            }
+        })
+
+    }
+
+
+
+    //页面进来首页时，首先判断是否存在cookie, 有则自动登录
+    //页面进来，自动获取cookie的值 发一个ajax请求
+    let cookieUsername = Cookie.getCookie("username");
+    let cookiePassword = Cookie.getCookie("password");
+    if (cookieUsername && cookiePassword) {  //cookie不为空再发请求
+        $.ajax({
+            type: "post",
+            url: "/login",
+            dataType: "json",
+            data: {
+                username: cookieUsername,
+                password: cookiePassword,
+            },
+            success: function (res) {
+                if (res.status == 1) {
+                    $(".notLoginBox").css({ display: "none" });
+                    $(".logining").css({ display: "block" });
+                    $(".login-username").text(Cookie.getCookie("username"));
+
+                    $(".i-username").text(`用户名:${res.datas.name}`)
+                    $(".i-email").text(`邮箱:${res.datas.email}`)
+
+                }
+            }
+        })
+    }
+
+
+    //首页点击退出账户时的功能
+    $(".exitBtn a").click(function () {
+        Cookie.clearAllCookie();
+        window.sessionStorage.removeItem("username");
+        window.sessionStorage.removeItem("password");
+    })
 
 
 
@@ -260,11 +360,12 @@ $(function () {
 
 
 // 发送请求方法
-function sendAjax(type, url) {
+function sendAjax(type, url, data) {
     var p_obj = new Promise(function (resolve, reject) {
         $.ajax({
             url: url,
             type: type,
+            data: data,
             dataType: "json",
             success: function (res) {
                 resolve(res)

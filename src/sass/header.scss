@@ -1,0 +1,234 @@
+.center {
+  max-width: 1180px;
+  margin: 0 auto;
+  // border: 1px solid orangered;
+}
+
+header {
+  .headerBox {
+    height: 66px;
+    .leftBox {
+      float: left;
+      .logoBox {
+        float: left;
+        a {
+          height: 66px;
+          display: block;
+          box-sizing: border-box;
+          padding: 10px 0;
+          img {
+            height: 100%;
+          }
+        }
+      }
+      nav {
+        height: 66px;
+        float: left;
+        display: flex;
+        display: flex;
+        align-items: center;
+        a {
+          display: block;
+          box-sizing: border-box;
+          padding: 0 10px;
+          margin: 0 15px;
+          height: 66px;
+          line-height: 66px;
+          text-decoration: none;
+        }
+        .navIteam {
+          margin-left: 10px;
+          height: 30px;
+          background: #f66e48;
+          border-radius: 20px;
+          padding: 0 15px;
+          position: relative;
+          .secondNav {
+            opacity: 0;
+            position: absolute;
+            top: 30px;
+            left: -9;
+            background: white;
+            width: 142px;
+            box-shadow: 0px 0px 10px 2px #ccc;
+            border-radius: 5px;
+            transition: opacity 0.4s;
+            div {
+              padding: 10px;
+              &:hover {
+                color: #f66e48;
+                background: rgba(221, 221, 221, 0.658);
+                cursor: pointer;
+              }
+            }
+          }
+          &:hover .secondNav {
+            opacity: 1;
+          }
+        }
+        img {
+          height: 100%;
+        }
+      }
+    }
+    .rightBox {
+      float: right;
+      display: flex;
+      align-items: center;
+      .seclectBox {
+        float: left;
+        margin-right: 30px;
+        display: flex;
+        align-items: center;
+        input {
+          background: #f5f8fa;
+          height: 30px;
+          width: 240px;
+          padding: 0 10px;
+          font-size: 18px;
+          border: 1px solid #f66e48;
+          // border-radius: 40px;
+          letter-spacing: 2px;
+        }
+        .searchBtn {
+          height: 30px;
+          width: 30px;
+          background: #f66e48;
+          text-align: center;
+          // border-radius: 50%;
+          i {
+            font-size: 25px;
+            line-height: 30px;
+            color: white;
+          }
+        }
+      }
+      .funBox {
+        float: right;
+        height: 66px;
+        // line-height: 66px;
+        display: flex;
+        align-items: center;
+        .cartBuy {
+          position: relative;
+          .numBox {
+            top: -10;
+            right: 2;
+            position: absolute;
+            padding: 1px 5px;
+            background: #f66e48;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 12px;
+          }
+        }
+        .accountBox {
+          .notLoginBox {
+            // display: none;
+            .notLogin {
+              display: flex;
+
+              a {
+                display: block;
+              }
+              span {
+                margin: 0 2px;
+              }
+            }
+          }
+
+          .logining {
+            display: none;
+            position: relative;
+            .userInfoBox {
+              opacity: 0;
+              transition: 0.5s;
+              box-shadow: 0px 0px 10px 1px #ccc;
+              padding: 20px;
+              // width: 150px;
+              position: absolute;
+              top: 30px;
+              background: white;
+              left: 50%;
+              transform: translateX(-50%);
+              z-index: 11;
+              h3 {
+                text-align: center;
+                font-size: 20px;
+              }
+              .infoBox {
+                padding: 20px;
+                box-sizing: border-box;
+                white-space: nowrap;
+                div {
+                  padding: 5px 0;
+                }
+              }
+              .exitBtn {
+                text-align: right;
+                a {
+                  font-size: 14px;
+                  color: rgb(102, 102, 102);
+                }
+              }
+            }
+            &:hover .userInfoBox {
+              opacity: 1;
+            }
+          }
+        }
+
+        .iphone-i {
+          position: relative;
+          .codeImg {
+            opacity: 0;
+            position: absolute;
+            top: 50;
+            right: 0px;
+            width: 180px;
+            height: 180px;
+            background: url("../images/index/header-nav-app-pop-bg@2x.png") no-repeat bottom;
+            background-size: contain;
+            background-color: white;
+            box-shadow: 0px 0px 10px 2px #ccc;
+            transition: opacity 0.4s;
+            img {
+              margin: 20px auto 0;
+              width: 100px;
+              height: 100px;
+              display: block;
+            }
+            p {
+              margin-top: 30px;
+              font-size: 13px;
+              text-align: center;
+            }
+          }
+        }
+        .iphone-i i:hover + .codeImg {
+          opacity: 1;
+        }
+        i {
+          display: block;
+          margin: 0 15px;
+          font-size: 30px;
+        }
+        a {
+          font-size: 17px;
+          text-decoration: none;
+        }
+
+        span {
+          margin: 0 5px;
+        }
+      }
+    }
+    a:hover {
+      color: #f66e48;
+    }
+    i:hover {
+      color: #f66e48;
+      cursor: pointer;
+    }
+  }
+}

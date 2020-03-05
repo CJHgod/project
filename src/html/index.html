@@ -7,10 +7,13 @@
     <title>首页</title>
     <link rel="stylesheet" href="../css/base(新增H5标签).css">
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../lib/font_gdwnt6bxslk/iconfont.css">
     <link rel="stylesheet" href="../lib/swiper.min.css">
     <script src="../lib/jquery-3.4.1.js"></script>
     <script src="../lib/swiper.min.js"></script>
+    <script src="../lib/封装cookie.js"></script>
     <script src="../json/indexData.js"></script>
     <style>
         .swiper-wrapper {
@@ -19,12 +22,11 @@
     </style>
 </head>
 
-
-
-
 <body>
-
-    <header>
+    <header></header>
+    <script>  $("header").load("./header.html");  </script>
+    <!--  <header>
+   
 
         <div class="center">
             <div class="headerBox clearfix">
@@ -81,12 +83,13 @@
             </div>
         </div>
 
-    </header>
+    </header> -->
 
 
     <main>
 
         <div class="rotation-box">
+            <div class="color-box"></div>
             <div class="center">
                 <div class="section1">
                     <div class="fun-slide-box">
@@ -146,8 +149,19 @@
         </nav>
 
 
+        <div class="adBox">
+            <div class="center">
+                <img src="../images/index/广告1.png" alt="">
+            </div>
+        </div>
+
+
         <div class="autoBox">
             <div class=" center">
+                <div class="title-box">
+                    <p>New</p>
+                    <h2>最新入库</h2>
+                </div>
                 <div class="autoBox-section">
                     <div class="swiper-container1">
                         <div class="swiper-wrapper">
@@ -178,7 +192,7 @@
             <div class="center">
                 <section>
                     <div class="top-title">
-                        <div class="leftBox">
+                        <!-- <div class="leftBox">
                             <h1> <span>2F</span> 手办库</h1>
                             <ul>
                                 <li class="li-active">原作</li>
@@ -190,13 +204,13 @@
                         <div class="rightBox">
                             <i class="iconfont icon-collection-fill"></i>
                             <a href="">更多</a>
-                        </div>
+                        </div> -->
                     </div>
 
                     <div class="bottom-context">
                         <div class="f-box">
                             <div class="content-area">
-                                <div class="grid-box">
+                                <!-- <div class="grid-box">
                                     <div class="imgBox">
                                         <img src="../images/index/floor2-img1.jpg" alt="">
                                     </div>
@@ -208,6 +222,68 @@
                                         <div class="num">收录:123</div>
                                     </div>
 
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- 广告 -->
+        <div class="adBox">
+            <div class="center">
+                <img src="../images/index/广告2.png" alt="">
+            </div>
+        </div>
+
+
+        <div class="cooperation-box">
+            <div class="center">
+                <h2>Cygames官方合作周边</h2>
+                <section>
+                    <div class="imgBox">
+                        <img src="../images/index/cooperation-img1.jpg" alt="">
+                    </div>
+                    <div class="imgBox">
+                        <img src="../images/index/cooperation-img2.jpg" alt="">
+                    </div>
+                    <div class="imgBox">
+                        <img src="../images/index/cooperation-img3.jpg" alt="">
+                    </div>
+                    <div class="imgBox">
+                        <img src="../images/index/cooperation-img4.jpg" alt="">
+                    </div>
+                </section>
+            </div>
+        </div>
+
+
+        <!-- 广告 -->
+        <div class="adBox">
+            <div class="center">
+                <img src="../images/index/广告3.png" alt="">
+            </div>
+        </div>
+
+        <div class="cooperation2-box">
+            <div class="center">
+                <h2>Lantis官方贩售专区</h2>
+                <section>
+                    <div class="leftBigImg">
+                        <img src="../images/index/cooperation2-leftImg.jpg" alt="">
+                    </div>
+
+                    <div class="right-context">
+                        <div class="shopBox">
+                            <div class="imgBox">
+                                <img src="../images/中原 巴 ～诱宴～/r-img3.jpg" alt="">
+                            </div>
+                            <div class="font-box">
+                                <div class="fb-title">中原 巴 ～诱宴～～诱宴～～诱宴～～诱宴～</div>
+                                <div class="details">
+                                    <div class="price">￥124</div>
+                                    <div class="flag">现货</div>
                                 </div>
                             </div>
                         </div>
@@ -216,115 +292,115 @@
             </div>
         </div>
 
-    </main>
-
-
-    <footer>
-        <div class="center">
-            <div class="footerBox">
-
-                <div class="top-section">
-
-                    <div class="leftText">
-                        <div class="content">
-                            <img src="../images/index/footer-about-point-01@2x.png" alt="">
-                            <h2>精品自营商品</h2>
-                            <p>精选国内日本最新最热二次元商品</p>
+        <!-- 楼层3   热门商品 -->
+        <div class="floor3">
+            <div class="center">
+                <div class="hot-box">
+                    <div class="top-title">
+                        <div class="leftBox">
+                            <h1> <span>3F</span>热门商品</h1>
                         </div>
-                        <div class="content">
-                            <img src="../images/index/footer-about-point-02@2x.png" alt="">
-                            <h2>精品自营商品</h2>
-                            <p>精选国内日本最新最热二次元商品</p>
-                        </div>
-                        <div class="content">
-                            <img src="../images/index/footer-about-point-03@2x.png" alt="">
-                            <h2>精品自营商品</h2>
-                            <p>精选国内日本最新最热二次元商品</p>
+                        <div class="rightBox">
+                            <i class="iconfont icon-collection-fill"></i>
+                            <a href="">更多</a>
                         </div>
                     </div>
-                    <div class="rightImgBox">
-                        <img src="../images/index/footer-image@2x.png" alt="">
+
+                    <div class="bottom-content">
+                        <!-- <div class="shopBox">
+                            <div class="imgBox">
+                                <img src="../images/崩坏3rd 丽塔·洛丝薇瑟 浣溪沙/r-img2.jpg" alt="">
+                            </div>
+
+                            <div class="blackBox">
+                                <div class="contextBox">
+                                    <div class="title">崩坏3rd 丽塔·洛丝薇瑟 浣溪沙洛丝薇瑟 洛丝薇瑟 浣溪沙浣溪沙</div>
+                                    <div class="price">￥131</div>
+                                </div>
+                            </div>
+                        </div>
+                         -->
                     </div>
                 </div>
-
-
-                <div class="bottom-section">
-                    <dl>
-                        <dt>站点介绍</dt>
-                        <dd>关于本站</dd>
-                        <dd>隐私政策</dd>
-                        <dd>法律声明</dd>
-                        <dd>举报</dd>
-                    </dl>
-                    <dl>
-                        <dt>关于自营</dt>
-                        <dd>自营介绍</dd>
-                        <dd>购买教程</dd>
-                        <dd>自营条款</dd>
-                        <dd>常见问题</dd>
-                    </dl>
-                    <dl>
-                        <dt>关于优选</dt>
-                        <dd>优选介绍</dd>
-                        <dd>关于优选</dd>
-                        <dd>配送方式</dd>
-                        <dd>优选条款</dd>
-                        <dd>常见问题</dd>
-                    </dl>
-
-                    <dl>
-                        <dt> 关于喵急便</dt>
-                        <dd>自营喵急便</dd>
-                        <dd>关于实名认证</dd>
-
-                    </dl>
-
-                    <dl>
-                        <dt>关于我们</dt>
-                        <dd>公会信息</dd>
-                        <dd>联系我们</dd>
-                        <dd>魔法师募集</dd>
-                    </dl>
-                    <dl>
-                        <dt>关于笔记</dt>
-                        <dd>新手引导</dd>
-                        <dd>笔记规约</dd>
-                        <dd>硬币说明</dd>
-                    </dl>
-                    <dl>
-                        <dt>关于拼谷</dt>
-                        <dd>拼谷介绍</dd>
-                        <dd>新手指引</dd>
-                        <dd>服务条款</dd>
-                    </dl>
-                    <dl>
-                        <dt> 关于masadora.jp</dt>
-                        <dd> 关于masadora.jp</dd>
-                    </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                </div>
-
-                <div class="last-fun">Geetaku Co.,Ltd @ All rights Reserved</div>
             </div>
         </div>
-    </footer>
+
+
+        <!-- 代购 -->
+        <div class="agent">
+            <div class="center">
+                <h2>代购</h2>
+                <div class="line"></div>
+                <section>
+
+                    <div class="imgBox">
+                        <img src="../images/index/agent-img1.jpg" alt="">
+                    </div>
+                    <div class="imgBox">
+                        <img src="../images/index/agent-img2.jpg" alt="">
+                    </div>
+                    <div class="imgBox">
+                        <img src="../images/index/agent-img3.jpg" alt="">
+                    </div>
+                    <div class="imgBox">
+                        <img src="../images/index/agent-img4.jpg" alt="">
+                    </div>
+                    <div class="imgBox">
+                        <img src="../images/index/agent-img5.jpg" alt="">
+                    </div>
+                    <div class="imgBox">
+                        <img src="../images/index/agent-img6.jpg" alt="">
+                    </div>
+                    <div class="imgBox">
+                        <img src="../images/index/agent-img7.jpg" alt="">
+                    </div>
+                    <div class="imgBox">
+                        <img src="../images/index/agent-img8.jpg" alt="">
+                    </div>
+                    <div class="imgBox">
+                        <img src="../images/index/agent-img9.jpg" alt="">
+                    </div>
+                    <div class="imgBox">
+                        <img src="../images/index/agent-img10.jpg" alt="">
+                    </div>
+                    <div class="imgBox">
+                        <img src="../images/index/agent-img11.jpg" alt="">
+                    </div>
+                    <div class="imgBox">
+                        <img src="../images/index/agent-img12.jpg" alt="">
+                    </div>
+                </section>
+            </div>
+        </div>
+
+
+
+
+        <div class="bottom-floor">
+            <div class="center">
+                <div class="section-box">
+                    <img src="../images/index/footer-logo@2x.png" alt="">
+                    <a href="">关注我们</a>
+
+                    <div class="weibo"></div>
+                    <div class="app"></div>
+
+
+                    <div class="context">
+                        魔法集市是上海极塔客信息技术有限公司
+                        推出的专注于二次元领域的一站式消费平台。
+                        自营商城整合了来自日本的第一手货源，为大家精心挑选了各种热门人气二次元周边商品。
+                        除此之外，您还可以在笔记社区分享您和心爱之物的各种故事。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+
+    <footer></footer>
+    <script> $("footer").load("./footer.html")</script>
 
 </body>
 

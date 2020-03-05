@@ -1,0 +1,78 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录页</title>
+    <link rel="stylesheet" href="../css/base(新增H5标签).css">
+    <!-- <link rel="stylesheet" href="../css/header.css"> -->
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../lib/font_gdwnt6bxslk/iconfont.css">
+    <script src="../lib/封装cookie.js"></script>
+    <script src="../lib/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+
+    <!-- <header></header> -->
+    <!-- <script>  $("header").load("./header.html") </script> -->
+
+
+    <main>
+        <div class="headerImg">
+            <a href="./index.html">
+                <img src="../images/login/header-logo@2x.png" alt="">
+            </a>
+        </div>
+        <div class="loginBox">
+            <h1>用户登录</h1>
+            <div class="register">
+                <a href="./register.html">免费注册</a>
+            </div>
+
+            <div class="form-list">
+                <input class="username" type="text" placeholder="用户名">
+                <input class="password" type="password" placeholder="密码">
+
+                <div class="codeBox">
+                    <input type="inputCode" placeholder="验证码" class="inputCode">
+                    <canvas id="captcha1"></canvas>
+                </div>
+            </div>
+
+
+            <div class="last-fun">
+                <div class="cookieBtn">
+                    <input type="checkbox" id="cookie-flag">
+                    <label for="cookie-flag">下次自动登录</label>
+                </div>
+
+                <div class="forget">
+                    <a href="">忘记密码？</a>
+                </div>
+
+            </div>
+
+            <div class="loginBtn">登录</div>
+        </div>
+    </main>
+
+
+    <footer></footer>
+    <script>  $("footer").load("./footer.html");  </script>
+</body>
+
+<!-- 验证码的插件功能 -->
+<script src="../lib/captcha.js"></script>
+<script src="../js/login.js"></script>
+
+
+
+<script>
+
+</script>
+
+
+</html>

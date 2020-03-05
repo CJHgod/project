@@ -1,0 +1,113 @@
+.center {
+  max-width: 1180px;
+  margin: 0 auto;
+  // border: 1px solid orangered;
+}
+
+main {
+  padding: 50px 0 0;
+  height: 1000px;
+  background: url("../images/login/logo-bg@x2.jpg") no-repeat 80% center;
+  background-size: cover;
+  position: relative;
+  .headerImg {
+    a {
+      margin: 0 auto;
+      display: block;
+      width: 264px;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .loginBox {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0px 0px 10px 1px #ccc;
+    padding: 0 40px 30px;
+    box-sizing: border-box;
+    width: 400px;
+    background: white;
+
+    h1 {
+      text-align: center;
+      font-size: 30px;
+      font-weight: bold;
+      padding: 20px 0;
+    }
+    .register {
+      text-align: right;
+      font-size: 16px;
+      margin-bottom: 10px;
+      a {
+        color: rgb(160, 160, 160);
+      }
+    }
+
+    .form-list {
+      .input-active {
+        border: 1px solid blue;
+      }
+      .input-error {
+        border: 1px solid red;
+      }
+      .username,
+      .password {
+        margin: 20px 0;
+        border-radius: 3px;
+        border: 1px solid rgba(204, 204, 204, 0.658);
+        display: block;
+        width: 100%;
+        height: 40px;
+        font-size: 18px;
+        padding: 0 10px;
+      }
+      .codeBox {
+        display: flex;
+        justify-content: space-between;
+        input {
+          display: block;
+          width: 200px;
+          font-size: 18px;
+
+          box-sizing: border-box;
+
+          height: 40px;
+          border-radius: 3px;
+          border: 1px solid rgba(204, 204, 204, 0.658);
+        }
+        canvas {
+          width: 100px;
+          height: 40px;
+        }
+      }
+    }
+    .last-fun {
+      padding: 15px 0;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      .cookieBtn {
+        input {
+          zoom: 150%;
+        }
+      }
+    }
+    .loginBtn {
+      width: 100%;
+      height: 40px;
+      background-image: linear-gradient(#ffa648, #ff7426);
+      text-align: center;
+      line-height: 40px;
+      border-radius: 8px;
+      color: white;
+      user-select: none;
+      cursor: pointer;
+    }
+  }
+}

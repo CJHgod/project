@@ -81,10 +81,24 @@ const webserver = require("gulp-webserver");
 const webserverHandler = () => {
     return gulp.src("./dest")
         .pipe(webserver({
-            host: '127.0.0.1', // 域名, 这个域名可以自定义
-            port: 8080, // 端口号, 0 ~ 65535, 尽量不适用 0 ~ 1023
+            host: "127.0.0.1", // 域名, 这个域名可以自定义
+            port: 7673, // 端口号, 0 ~ 65535, 尽量不适用 0 ~ 1023
             open: '/html/index.html', // 你默认打开的首页, 从 dist 下面的目录开始书写  (不用加作为服务器的文件夹了)
             livereload: true, // 自动刷新浏览器 - 热重启
+
+            //配置代理服务器
+            proxies: [
+                {
+                    source: '/register',
+                    target: 'http://localhost/maho/register.php'
+                },
+                {
+                    source: '/login',
+                    target: 'http://localhost/maho/login.php'
+                }
+
+            ]
+
         })) // 开启服务器
 }
 
