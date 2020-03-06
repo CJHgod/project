@@ -10,7 +10,7 @@ const autocss = require("gulp-autoprefixer");
 const cssHandler = () => {
     return gulp.src("./src/css/*.css")
         .pipe(autocss({
-            browsers: ['last 2 versions', 'Android >= 4.0'],
+            // browsers: ['last 2 versions', 'Android >= 4.0'],
             cascade: true, //是否美化属性值 默认：true 像这样：
             remove: true //是否去掉不必要的前缀 默认：true
         }))
@@ -33,6 +33,8 @@ const jsHandler = () => {
         .pipe(minJs())
         .pipe(gulp.dest("dest/js"))
 }
+
+
 
 //转移  lib文件夹
 const libMove = () => {

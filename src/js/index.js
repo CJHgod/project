@@ -4,8 +4,10 @@ $(function () {
     //渲染走马灯部分
     //请求渲染floor3  数据重复用
     sendAjax("get", "../json/indexData.json").then((res) => {
+
+        //渲染走马灯部分
         let swiper_slide = res.map(function (item) {
-            return ` <div class="swiper-slide">
+            return ` <div class="swiper-slide" data-id="${item.indexData.id}">
                      <div class="imgBox">
                         <img src="${item.rowLeftImg}" alt="">
                      </div>  
@@ -36,11 +38,19 @@ $(function () {
             swiper1.autoplay.start()
         })
 
+        //走马灯的点击事件，事件委托
+        $(".autoBox-section").on("click", ".swiper-slide", function () {
+            let clickId = $(this).data("id")
+            window.open(`./details.html?id=${clickId}`)
+
+        })
+
+
 
         //请求渲染floor3  数据重复用
         let shopBoxDom = "";
         for (var i = 0; i < 10; i++) {
-            shopBoxDom += `<div class="shopBox">
+            shopBoxDom += `<div class="shopBox" data-id="${res[i].indexData.id}">
                                 <div class="imgBox">
                                     <img src="${res[i].rowLeftImg}" alt="">
                                 </div>
@@ -54,14 +64,17 @@ $(function () {
                             </div>`;
         }
         $(".floor3 .bottom-content").html(shopBoxDom);
+        $(".floor3 .bottom-content").on("click", ".shopBox", function () {
+            let shopId = $(this).data("id")
+            window.location.href = `../html/details.html?id=${shopId}`
+        })
 
 
 
         //请求渲染cooperation2-box   数据重复用
-
         let cBox = "";
         for (var i = 6; i < 12; i++) {
-            cBox += `  <div class="shopBox">
+            cBox += `  <div class="shopBox" data-id="${res[i].indexData.id}">
                             <div class="imgBox">
                                 <img src="${res[i].rowLeftImg}" alt="">
                             </div>
@@ -75,6 +88,13 @@ $(function () {
                         </div>`;
         }
         $(".cooperation2-box  .right-context").html(cBox);
+
+        //cooperation2-box 渲染完成，添加点击事件
+        $(".cooperation2-box .right-context").on("click", ".shopBox", function () {
+            let shopId = $(this).data("id")
+            window.location.href = `../html/details.html?id=${shopId}`
+        })
+
 
     })
 
@@ -353,6 +373,9 @@ $(function () {
         window.sessionStorage.removeItem("username");
         window.sessionStorage.removeItem("password");
     })
+
+
+
 
 
 

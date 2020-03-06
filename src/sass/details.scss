@@ -1,0 +1,466 @@
+.center {
+  max-width: 1180px;
+  margin: 0 auto;
+  // border: 1px solid orangered;
+}
+
+main {
+  padding: 20px;
+  background: #f7f7f7;
+  .top-section {
+    display: flex;
+    justify-content: space-between;
+    .letfBox {
+      width: 400px;
+      .imgBox {
+        background: white;
+        padding: 20px 20px 0;
+        box-sizing: border-box;
+        .currentImgBox {
+          width: 100%;
+          height: 460px;
+          position: relative;
+          .nowCurrentImg {
+            img {
+              display: block;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+            .maskBox {
+              display: none;
+              position: absolute;
+              top: 0;
+              width: 180px;
+              height: 180px;
+              background: rgba(0, 0, 0, 0.232);
+            }
+          }
+
+          .bigImgBox {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 415px;
+            width: 400px;
+            height: 483px;
+            background: rgba(0, 0, 0, 0.232);
+            z-index: 1;
+            background-image: url("../images/崩坏3rd 丽塔·洛丝薇瑟 浣溪沙/rowLeft.jpg");
+            background-size: 800px 966px;
+
+            // img {
+            //   width: 100%;
+            //   height: 100%;
+            //   object-fit: cover;
+            // }
+          }
+        }
+
+        .readyImgBox {
+          padding: 20px 0;
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+          grid-template-rows: repeat(1, 1fr);
+          grid-gap: 10px;
+          .min-imgBox {
+            height: 100px;
+            box-sizing: border-box;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+          .minImgBox-active {
+            border: 2px solid blue;
+          }
+        }
+      }
+    }
+
+    .rightBox {
+      width: 745px;
+      //   height: 400px;
+
+      .right-top {
+        background: white;
+        display: flex;
+        align-items: center;
+        border: 1px solid rgb(226, 226, 226);
+        .shop-infomation {
+          padding: 15px;
+          box-sizing: border-box;
+          flex: 4;
+          .shop-name {
+            .jp-name {
+              font-size: 28px;
+              font-weight: bold;
+            }
+            .china-name {
+              font-size: 18px;
+              padding-top: 10px;
+              color: orangered;
+            }
+          }
+
+          .shop-label {
+            margin: 20px 0;
+            display: flex;
+            .labelBox {
+              padding: 2px 12px;
+              background: orange;
+              border-radius: 20px;
+              color: white;
+              font-size: 12px;
+              margin-right: 20px;
+            }
+          }
+          .norms {
+            margin-bottom: 10px;
+          }
+          .price {
+            .context {
+              font-size: 18px;
+              font-weight: bold;
+              color: orangered;
+            }
+          }
+          .price,
+          .norms,
+          .shop-num,
+          .shop-state {
+            padding: 5px 0;
+            display: flex;
+            .infos {
+              color: rgb(131, 131, 131);
+              flex-shrink: 0;
+              margin-right: 30px;
+              display: flex;
+              align-items: center;
+            }
+            .context {
+              flex-grow: 1;
+              display: flex;
+              flex-wrap: wrap;
+
+              .sort {
+                flex-shrink: 0;
+                border: 2px solid orangered;
+                color: rgb(255, 60, 0);
+                padding: 3px 8px;
+                border-radius: 20px;
+                font-size: 14px;
+                margin: 0 5px;
+              }
+            }
+          }
+
+          .shop-num {
+            .context {
+              flex-grow: 0;
+              padding: 0 4px;
+              border-radius: 12px;
+              text-align: center;
+              border: 1px solid black;
+              box-sizing: border-box;
+              .reduce,
+              .add {
+                width: 22px;
+                height: 22px;
+                font-size: 14px;
+                font-weight: bold;
+                user-select: none;
+                cursor: pointer;
+              }
+              input {
+                text-align: center;
+                width: 46px;
+                background: #ccc;
+              }
+            }
+          }
+
+          .btn-fun {
+            display: flex;
+            margin-top: 30px;
+            .addCart,
+            .nowBuyBtn {
+              width: 150px;
+              height: 50px;
+              border-radius: 50px;
+              color: white;
+              line-height: 50px;
+              text-align: center;
+              margin-right: 30px;
+              cursor: pointer;
+              user-select: none;
+            }
+            .addCart {
+              background: orange;
+              &:hover {
+                box-shadow: 0px 0px 10px 0.2px rgba(255, 166, 0, 0.603);
+              }
+            }
+            .nowBuyBtn {
+              background: orangered;
+              &:hover {
+                box-shadow: 0px 0px 10px 0.2px rgba(255, 68, 0, 0.575);
+              }
+            }
+          }
+        }
+
+        .comment {
+          flex: 2;
+          padding: 15px;
+          font-size: 12px;
+          .comment-section {
+            border: 1px solid #bbbbbb;
+
+            .comment-top {
+              background: #e7eaec;
+              padding: 5px 10px;
+            }
+            .comment-middle {
+              border-bottom: 1px solid #bbbbbb;
+              .middle-top {
+                padding: 15px;
+
+                ul {
+                  display: grid;
+                  grid-template-columns: repeat(4, 1fr);
+                  border-radius: 2px;
+
+                  border: 1px solid black;
+                  li {
+                    text-align: center;
+                    padding: 5px 8px;
+                    border-right: 1px solid black;
+                    position: relative;
+                    &:last-child {
+                      border-right: none;
+                    }
+
+                    .tipBox {
+                      background: #ebccd1;
+                      color: #a94442;
+                      padding: 1px 4px;
+                      border-radius: 10px;
+                      position: absolute;
+                      top: -50%;
+                      left: 50%;
+                      transform: translateX(-50%);
+                    }
+                  }
+                }
+              }
+              .middle-bottom {
+                padding: 0 15px;
+                .myComment {
+                  display: flex;
+                  align-items: center;
+                  .commentBox {
+                    padding: 2px 4px;
+                    background: #ccc;
+                    font-size: 14px;
+                    font-weight: bold;
+                    margin-left: 5px;
+                  }
+                }
+
+                .starBox {
+                  height: 36px;
+                  margin: 10px 0;
+                  display: flex;
+                  align-items: center;
+                  .iconBox {
+                    width: 18px;
+                    height: 18px;
+                    background: #888888;
+                    border-radius: 50%;
+                    position: relative;
+                    &::after {
+                      content: "";
+                      width: 10px;
+                      height: 5px;
+                      background: white;
+                      display: block;
+                      position: absolute;
+                      top: 50%;
+                      left: 50%;
+                      transform: translate(-50%, -50%);
+                    }
+                  }
+                  .fillBox {
+                    flex-grow: 1;
+                    height: 100%;
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+                    i {
+                      color: rgb(190, 190, 190);
+                      font-size: 28px;
+                      cursor: pointer;
+                    }
+                    .i-active {
+                      color: yellow;
+                    }
+                  }
+                }
+              }
+            }
+            .comment-footer {
+              padding: 15px;
+              .footer-top {
+                .comments {
+                  span {
+                    font-size: 14px;
+                  }
+                  em {
+                    font-size: 18px;
+                    color: orangered;
+                  }
+                }
+                .totalBox {
+                  text-align: right;
+                }
+              }
+
+              .statisticsBox {
+                background: #f4f4f4;
+                margin-top: 10px;
+                padding: 20px 10px 3px;
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                grid-gap: 5px;
+                .sData {
+                  text-align: center;
+                  h2 {
+                    margin-top: 2px;
+                  }
+                  .rectangleBox {
+                    width: 100%;
+                    height: 60px;
+                    position: relative;
+                    .rectangle {
+                      width: 100%;
+                      height: 100%; //改这里的比例 就可以动态改变方块高度
+                      background: rgb(204, 204, 204);
+                      position: absolute;
+                      bottom: 0;
+                      span {
+                        position: absolute;
+                        top: -18;
+                        left: 50%;
+                        transform: translateX(-50%);
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .sell-box {
+            margin: 10px 0;
+            text-align: right;
+            color: #428bca;
+            padding-right: 20px;
+          }
+        }
+      }
+
+      .shop-detail {
+        margin-top: 30px;
+        background: white;
+        .details-title {
+          display: flex;
+          border-bottom: 2px solid #b1b1b1;
+          .details-img,
+          .details-data {
+            background: rgb(235, 235, 235);
+            cursor: pointer;
+            height: 50px;
+            flex: 1;
+            text-align: center;
+            line-height: 50px;
+          }
+          .details-active {
+            background: #ccc;
+          }
+        }
+
+        #showImgBox {
+          padding: 20px 0;
+          column-count: 2;
+          column-gap: 10px;
+          .imgBox {
+            break-inside: avoid;
+            width: 100%;
+            padding: 10px 0;
+            // transform-style: preserve-3d;
+            transform-origin: center bottom;
+            animation: imgAnimation 1s;
+            overflow: hidden;
+            img {
+              width: 100%;
+              object-fit: cover;
+              transition: 0.5s;
+            }
+            &:hover img {
+              transform: scale(1.2);
+            }
+          }
+
+          @keyframes imgAnimation {
+            0% {
+              transform: translateZ(50px) translateY(50px) rotateX(40deg) skewX(-3deg) skewY(5deg);
+            }
+            100% {
+              transform: translateZ(0px) rotateX(0deg);
+            }
+          }
+        }
+
+        .details-text {
+          display: none;
+          ul {
+            font-size: 14px;
+            li {
+              padding: 8px 10px;
+              display: flex;
+              border-bottom: 1px solid #888888;
+
+              .infos {
+                width: 80px;
+                padding: 10px;
+                box-sizing: border-box;
+              }
+              .context {
+                flex-grow: 1;
+                padding: 5px 10px;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                a {
+                  padding-right: 5px;
+                  color: rgb(0, 140, 255);
+                  img {
+                    height: 14px;
+                  }
+                }
+              }
+              &:nth-child(odd) {
+                background: #e2e2e2;
+              }
+              &:nth-child(even) {
+                background: #bebebe;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
