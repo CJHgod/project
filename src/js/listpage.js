@@ -44,7 +44,7 @@ $(function () {
                 let nowSortArray = sortArray.slice(firstShop, lageShop)
                 let listDataDom = listDomFn(nowSortArray);
                 $(".shop-list").html(listDataDom)
-
+                loadFn()
             })
             //价格排序   降序
             $("#downPrice").click(function () {
@@ -62,7 +62,7 @@ $(function () {
                 let nowSortArray = sortArray.slice(firstShop, lageShop)
                 let listDataDom = listDomFn(nowSortArray);
                 $(".shop-list").html(listDataDom);
-
+                loadFn()
             })
 
             //默认按钮
@@ -71,6 +71,7 @@ $(function () {
                 togglePage(res.listdata)
                 let listDataDom = listDomFn(nowArray);
                 $(".shop-list").html(listDataDom)
+                loadFn()
 
             })
 

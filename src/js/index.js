@@ -58,7 +58,7 @@ $(function () {
                                 <div class="blackBox">
                                     <div class="contextBox">
                                         <div class="title">${res[i].indexData.name}</div>
-                                        <div class="price">${res[i].indexData.price}</div>
+                                        <div class="price">${res[i].indexData.price} 元</div>
                                     </div>
                                 </div>
                             </div>`;
@@ -66,7 +66,8 @@ $(function () {
         $(".floor3 .bottom-content").html(shopBoxDom);
         $(".floor3 .bottom-content").on("click", ".shopBox", function () {
             let shopId = $(this).data("id")
-            window.location.href = `../html/details.html?id=${shopId}`
+            window.open(`./details.html?id=${shopId}`)
+            // window.location.href = `../html/details.html?id=${shopId}`
         })
 
 
@@ -81,7 +82,7 @@ $(function () {
                             <div class="font-box">
                                 <div class="fb-title">${res[i].indexData.name}</div>
                                 <div class="details">
-                                    <div class="price">${res[i].indexData.price}</div>
+                                    <div class="price">${res[i].indexData.price} 元</div>
                                     <div class="flag">现货</div>
                                 </div>
                             </div>
@@ -92,7 +93,8 @@ $(function () {
         //cooperation2-box 渲染完成，添加点击事件
         $(".cooperation2-box .right-context").on("click", ".shopBox", function () {
             let shopId = $(this).data("id")
-            window.location.href = `../html/details.html?id=${shopId}`
+            window.open(`./details.html?id=${shopId}`)
+            // window.location.href = `../html/details.html?id=${shopId}`
         })
 
 
@@ -373,6 +375,10 @@ $(function () {
         window.sessionStorage.removeItem("username");
         window.sessionStorage.removeItem("password");
     })
+
+
+
+
 
 
 

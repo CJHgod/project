@@ -97,6 +97,72 @@ $(function () {
 
         }).join("");
         $(".details-text ul").html(indexDataAttribute);
+
+
+
+
+        //首先判断 登录状态  ，  或者 直接插入数据库
+        $(".addCart").click(function () {
+            //获取当前页面数据
+            let imgsrc = nowData.imgData[0];
+            let shopid = nowData.indexData.id;
+            let name = nowData.indexData.name;
+            let prices = nowData.indexData.price;
+
+            let addnum = $(".shop-num .context input").val();
+
+
+
+            // console.log(imgsrc, shopid, name, prices, addnum);
+
+            $.ajax({
+                url: "/addcart",
+                data: {
+                    shopsID: shopid,
+                    shopName: name,
+                    price: prices,
+                    img: imgsrc,
+                    totalnum: addnum
+                },
+                dataType: "json",
+                success: function (res) {
+                    // console.log(res)
+                }
+            })
+
+            $.ajax({
+                url: "/selectcart",
+                dataType: "json",
+                success: function (res) {
+                    $(".cartBuy .numBox").text(res.length);
+                }
+            })
+
+
+            // console.log(nowData);
+
+        })
+
+        //自动触发 加入购物车事件， 然后跳转购物车页面
+        $(".nowBuyBtn").click(function () {
+            $(".addCart").trigger("click");
+            $.ajax({
+                url: "/selectcart",
+                dataType: "json",
+                success: function (res) {
+                    $(".cartBuy .numBox").text(res.length);
+                }
+            })
+
+            window.location.href = "../html/cartpage.html";
+        })
+
+
+
+
+
+
+
     })
 
 
@@ -204,6 +270,7 @@ $(function () {
 
 
 
+
     //商品详情 和 规格参数 的切换功能
     $('.details-title .details-img').click(function () {
         $(this).addClass("details-active").siblings().removeClass("details-active ");
@@ -216,6 +283,13 @@ $(function () {
         $("#showImgBox").css({ display: "none" })
         $(".details-text").css({ display: "block" })
     })
+
+
+
+
+
+
+
 
 })
 

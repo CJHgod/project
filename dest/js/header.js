@@ -1,1 +1,1 @@
-"use strict";$(function(){$(".headerBox nav").on("click","a",function(t){t.preventDefault(),window.location.href="../html/listpage.html"})});
+"use strict";$(function(){$.ajax({url:"/selectcart",dataType:"json",success:function(t){$(".cartBuy .numBox").text(t.length)}})});

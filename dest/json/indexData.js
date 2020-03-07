@@ -5,7 +5,7 @@ var shopsData = [
             name: "ようこそ実力至上主義の教室へ 櫛田桔梗 お着替え中Ver.", //原名
             chinaName: "欢迎来到实力至上主义的教室 栉田桔梗 更衣Ver.", //中文名
             attribute: ["女 ", "比例人形 ", "全年龄"], //属性
-            price: "13,800日元 （863元）",//定价
+            price: "863",//定价
             offerDate: "2018年3月28日",//发售日
             proportion: "1/7",//比例
             maker: "角川", //制作
@@ -56,7 +56,7 @@ var shopsData = [
             name: "傾城恋 玉環", //原名
             chinaName: "倾城恋 玉环", //中文名
             attribute: ["女 ", "比例人形 ", "全年龄"], //属性
-            price: "	15,800日元 （含税，988元）",//定价
+            price: "988",//定价
             offerDate: "	2020年8月",//发售日
             proportion: "1/7",//比例
             maker: "	双翼社", //制作
@@ -107,7 +107,7 @@ var shopsData = [
             name: "Fate/stay night 間桐桜 15th Anniversary, Dress Ver.", //原名
             chinaName: "Fate/stay night 间桐樱 15周年礼服版", //中文名
             attribute: ["女 ", "比例人形 ", "全年龄"], //属性
-            price: "13,800日元 （含税，863元）",//定价
+            price: "863",//定价
             offerDate: "2021年6月",//发售日
             proportion: "1/7",//比例
             maker: "双翼社", //制作
@@ -162,7 +162,7 @@ var shopsData = [
             name: "崩坏3rd Rita Rossweisse", //原名
             chinaName: "崩坏3rd 丽塔·洛丝薇瑟 浣溪沙", //中文名
             attribute: ["女 ", "比例人形 ", "全年龄"], //属性
-            price: "696人民币",//定价
+            price: "696",//定价
             offerDate: "2020年7月",//发售日
             proportion: "1/8",//比例
             maker: "APEX-TOY", //制作
@@ -212,7 +212,7 @@ var shopsData = [
             name: "ドールズフロントライン Gd DSR-50 ~红牡丹~", //原名
             chinaName: "少女前线 DSR-50 红牡丹", //中文名
             attribute: ["女 ", "比例人形 ", "全年龄"], //属性
-            price: "17,800日元 （1113元）",//定价
+            price: "1113",//定价
             offerDate: "2020年6月",//发售日
             proportion: "1/7",//比例
             maker: "Phat!", //制作
@@ -261,7 +261,7 @@ var shopsData = [
             name: "機動戦隊アイアンサーガ ジュディス", //原名
             chinaName: "机动战队 教廷骑士·茱蒂丝", //中文名
             attribute: ["女 ", "比例人形 ", "全年龄"], //属性
-            price: "14,800日元 （含税，926元）",//定价
+            price: "926",//定价
             offerDate: "2019/8/30",//发售日
             proportion: "1/8",//比例
             maker: "Myethos", //制作
@@ -313,7 +313,7 @@ var shopsData = [
             name: "Dai-Yu DX ver.", //原名
             chinaName: "黛玉 DX版", //中文名
             attribute: ["女 ", "比例人形 ", " R18+ ", "可脱"], //属性
-            price: "17,800日元 （1113元）",//定价
+            price: "1113",//定价
             offerDate: "2020年4月",//发售日
             proportion: "1/6",//比例
             maker: "SkyTube", //制作
@@ -362,7 +362,7 @@ var shopsData = [
             name: "アズールレーン 愛宕 真夏の行進曲Ver.", //原名
             chinaName: "碧蓝航线 爱宕 真夏的进行曲Ver.", //中文名
             attribute: ["女 ", "比例人形 ", " R12 "], //属性
-            price: "17,800日元 （1113元）",//定价
+            price: "1413",//定价
             offerDate: "2020年3月",//发售日
             proportion: "1/7",//比例
             maker: "Alter", //制作
@@ -409,7 +409,7 @@ var shopsData = [
             name: "中原 巴 ～誘宴～", //原名
             chinaName: "中原 巴 ～诱宴～", //中文名
             attribute: ["女 ", "比例人形 ", " R18+ ", "可脱"], //属性
-            price: "16,000日元 （含税，1001元）",//定价
+            price: "1001",//定价
             offerDate: "2019/2/10",//发售日
             proportion: "1/7",//比例
             maker: "Native", //制作
@@ -459,7 +459,7 @@ var shopsData = [
             name: "B-STYLE To LOVEる ダークネス 金色の闇 生足バニーVer.", //原名
             chinaName: "B-STYLE ToLove Darkness 金色暗影 生足兔女郎ver.", //中文名
             attribute: ["女 ", "比例人形 ", "R12"], //属性
-            price: "22,000日元 （1376元）",//定价
+            price: "1376",//定价
             offerDate: "2020年12月",//发售日
             proportion: "1/4",//比例
             maker: "FREEing", //制作
@@ -509,7 +509,7 @@ var shopsData = [
             name: "金蓮 Jin-Lian", //原名
             chinaName: "金莲", //中文名
             attribute: ["女 ", "比例人形 ", "R18+", "可脱"], //属性
-            price: "	15,000日元 （含税，938元）",//定价
+            price: "1938",//定价
             offerDate: "2018年7月19日",//发售日
             proportion: "1/6",//比例
             maker: "STP", //制作
@@ -561,7 +561,7 @@ var shopsData = [
             name: "瓶児 Ping-Yi", //原名
             chinaName: "瓶儿", //中文名
             attribute: ["女 ", "比例人形 ", "R18+", "可脱"], //属性
-            price: "	15,000日元 （含税，938元）",//定价
+            price: "638",//定价
             offerDate: "2017/12/20日",//发售日
             proportion: "1/6",//比例
             maker: "STP", //制作
@@ -610,3 +610,4 @@ var shopsData = [
 
     },
 ]
+console.log(JSON.stringify(shopsData))

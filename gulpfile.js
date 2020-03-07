@@ -97,8 +97,32 @@ const webserverHandler = () => {
                 {
                     source: '/login',
                     target: 'http://localhost/maho/login.php'
-                }
-
+                },
+                {
+                    //向购物车添加功能
+                    source: '/addcart',
+                    target: 'http://localhost/maho/addshopsTocart.php'
+                },
+                {
+                    //查询购物车功能
+                    source: '/selectcart',
+                    target: 'http://localhost/maho/selectCart.php'
+                },
+                {
+                    //修改购物车功能
+                    source: '/delData',
+                    target: 'http://localhost/maho/delData.php'
+                },
+                {
+                    //更新购物车商品选中功能功能
+                    source: '/updateActive',
+                    target: 'http://localhost/maho/updateActive.php'
+                },
+                {
+                    //更新购物车商品数量功能
+                    source: '/updateShopNum',
+                    target: 'http://localhost/maho/updateShopNum.php'
+                },
             ]
 
         })) // 开启服务器
